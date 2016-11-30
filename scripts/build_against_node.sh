@@ -32,7 +32,7 @@ if [[ $(uname -s) == 'Darwin' ]]; then
     brew install sqlite
     npm install --build-from-source --sqlite=$(brew --prefix) --clang=1
 else
-    npm install --build-from-source --sqlite=/usr --clang=1
+    npm install --build-from-source --sqlite=/usr/local --clang=1
 fi
 npm test
 export NODE_SQLITE3_JSON1=yes
