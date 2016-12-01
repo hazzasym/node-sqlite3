@@ -7,10 +7,10 @@
   "targets": [
     {
       "target_name": "<(module_name)",
-      "include_dirs": ["<!(node -e \"require('nan')\")", "/usr/local/include"],
+      "include_dirs": ["<!(node -e \"require('nan')\")", "/usr/local/include", "/usr/local/include/node"],
       "conditions": [
         ["sqlite != 'internal'", {
-            "include_dirs": [ "<(sqlite)/include" ],
+            "include_dirs": [ "<(sqlite)/include", "/usr/local/include", "/usr/local/include/node" ],
             "libraries": [
                "-l<(sqlite_libname)"
             ],
@@ -31,7 +31,7 @@
         }
         ]
       ],
-      "cflags": [ "-Wall", "-O0", "-I/usr/local/include", "-include ../src/gcc-preinclude.h" ],
+      "cflags": [ "-Wall", "-O0", "-I/usr/local/include", "-I/usr/local/include/node", "-include ../src/gcc-preinclude.h" ],
       "sources": [
         "src/database.cc",
         "src/node_sqlite3.cc",
