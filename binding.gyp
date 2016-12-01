@@ -7,7 +7,7 @@
   "targets": [
     {
       "target_name": "<(module_name)",
-      "include_dirs": ["<!(node -e \"require('nan')\")"],
+      "include_dirs": ["<!(node -e \"require('nan')\")", "/usr/local/include"],
       "conditions": [
         ["sqlite != 'internal'", {
             "include_dirs": [ "<(sqlite)/include" ],
@@ -31,7 +31,7 @@
         }
         ]
       ],
-      "cflags": [ "-include ../src/gcc-preinclude.h" ],
+      "cflags": [ "-Wall", "-O0", "-I/usr/local/include", "-include ../src/gcc-preinclude.h" ],
       "sources": [
         "src/database.cc",
         "src/node_sqlite3.cc",
