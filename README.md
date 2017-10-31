@@ -181,6 +181,10 @@ In sqlite3's directory (where its `package.json` resides) run the following:
 * [Johannes Schauer](https://github.com/pyneo)
 * [Mithgol](https://github.com/Mithgol)
 
+# Fork change
+
+* This fork is chenge way to build in order to support build on FreeBSD system
+
 # Acknowledgments
 
 Thanks to [Orlando Vazquez](https://github.com/orlandov),
